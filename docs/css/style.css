@@ -34,7 +34,7 @@ h1, h2, h3, h4, h5, h6 {
 .back-to-top {
   position: fixed;
   display: none;
-  background: #18d26e;
+  background: #E91E63;
   color: #fff;
   display: inline-block;
   width: 44px;
@@ -122,13 +122,13 @@ h1, h2, h3, h4, h5, h6 {
 #header #logo h1 a, #header #logo h1 a:hover {
   color: #000;
   padding-left: 10px;
-  border-left: 4px solid #18d26e;
+  border-left: 4px solid #E91E63;
 }
 
 #header.header-scrolled #logo h1 a {
   color: #fff;
   padding-left: 10px;
-  border-left: 4px solid #18d26e;
+  border-left: 4px solid #E91E63;
 }
 
 #header #logo img {
@@ -376,7 +376,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-menu li:hover > a, .nav-menu > .menu-active > a {
-  color: #18d26e;
+  color: #E91E63;
 }
 
 .nav-menu > li {
@@ -570,7 +570,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   display: block;
   width: 40px;
   height: 3px;
-  background: #18d26e;
+  background: #E91E63;
   bottom: 0;
   left: calc(50% - 20px);
 }
@@ -934,7 +934,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #portfolio #portfolio-flters li:hover, #portfolio #portfolio-flters li.filter-active {
-  background: #18d26e;
+  background: #E91E63;
   color: #fff;
 }
 
@@ -1099,7 +1099,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #portfolio .portfolio-item .modal-dialog .btn:hover {
-  background: #18d26e;
+  background: #E91E63;
   color: #fff;
 }
 
@@ -1306,7 +1306,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   font-size: 48px;
   display: inline-block;
   margin-bottom: 10px;
-  color: #18d26e;
+  color: #E91E63;
 }
 
 #contact .contact-info address, #contact .contact-info p {
@@ -1329,7 +1329,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #contact .contact-info a:hover, #contact .contact-info a:hover h3, #contact .contact-info a:hover p {
-  color: #18d26e;
+  color: #E91E63;
   transition: 0.3s
 }
 
