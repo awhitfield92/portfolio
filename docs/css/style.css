@@ -634,7 +634,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 #about {
   background: url("../img/about-bg.jpg") center top no-repeat fixed;
   background-size: cover;
-  padding: 40px 0 40px 0;
+  padding: 120px 0 40px 0;
   position: relative;
 }
 
@@ -1293,9 +1293,9 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 /* Contact Section
 --------------------------------*/
-#contact {
+/* #contact {
   padding: 60px 0;
-}
+} */
 
 #contact .contact-info {
   margin-bottom: 20px;
