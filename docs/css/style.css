@@ -1074,7 +1074,10 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 @media (min-width: 768px) {
   #portfolio .portfolio-item .portfolio-img-container {
-    max-height: 500px;
+    max-height: 600px;
+  }
+  #portfolio .portfolio-item .portfolio-text-container {
+    max-height: 550px;
   }
   #portfolio .portfolio-icon img {
     width: auto;
