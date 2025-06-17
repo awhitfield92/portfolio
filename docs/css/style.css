@@ -951,6 +951,11 @@ body.mobile-nav-active #mobile-nav-toggle {
   box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.16);
 }
 
+#portfolio .portfolio-wrap .image-na {
+    text-align: center;
+    margin-top: 50px;
+}
+
 #portfolio .portfolio-item {
   position: relative;
   height: 360px;
