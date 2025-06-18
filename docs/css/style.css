@@ -956,6 +956,10 @@ body.mobile-nav-active #mobile-nav-toggle {
     margin-top: 50px;
 }
 
+#portfolio .portfolio-wrap .image-na h4 {
+  color: #f7f7f7;
+}
+
 #portfolio .portfolio-item {
   position: relative;
   height: 360px;
