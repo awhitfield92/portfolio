@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Board Game App – Full Case Study</title>
+  <link rel="icon" href="img/favicon/favicon.ico" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      background: #f8f9fa;
+      color: #222;
+      margin: 0;
+      padding: 0;
+    }
+    .marquee-header-img {
+      width: 100%;
+      max-height: 380px;
+      object-fit: cover;
+      display: block;
+    }
+    .marquee-container {
+      max-width: 800px;
+      margin: -120px auto 0 auto;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      padding: 2.5rem 2rem 3rem 2rem;
+      position: relative;
+      z-index: 2;
+    }
+    .marquee-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .marquee-meta {
+      color: #888;
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+    .marquee-content p {
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+    @media (max-width: 600px) {
+      .marquee-container {
+        padding: 1.2rem 0.7rem 2rem 0.7rem;
+        margin-top: -60px;
+      }
+      .marquee-title {
+        font-size: 1.5rem;
+      }
+      .marquee-header-img {
+        max-height: 180px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <img src="img/portfolio/board-game-app.png" alt="Project Board Game Hero" class="marquee-header-img">
+  <div class="marquee-container">
+    <a href="index.html" style="display: inline-flex; align-items: center; text-decoration: none; color: #333; font-size: 1.1rem; margin: 2rem 0 1.5rem 0;">
+        <svg width="22" height="22" viewBox="0 0 20 20" fill="none" style="margin-right: 8px;">
+        <path d="M12 16L8 12L12 8" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Back to Home
+    </a>
+    <h1 class="marquee-title">Project Board Game: Redesigning Rulebook Consumption</h1>
+    <div class="marquee-meta">Academy Xi</div>
+    <div class="marquee-content">
+      <p><strong>Overview:</strong> This self-initiated project allowed me to explore and strengthen my UX practice by addressing a common challenge: reducing user reluctance to engage with rulebooks and complex rule systems, often encountered in board games, tabletop games, and similar experiences.</p>
+      
+      <h2>Discovery &amp; Research</h2>
+      <p>I started by conducting a competitive analysis to examine existing solutions and identify gaps in how rule content is currently presented. To better understand user needs and build empathy, I created personas representing both novice and experienced players, highlighting their unique frustrations, goals, and behaviors related to learning new rules.</p>
+      <p>Through research, I formulated the statement of <span style="font-weight: 600;">How might we manage board games to make them easier to learn?</span></p>
+
+      <div style="display: flex; justify-content: space-between; margin-top: 1.5rem;">
+        <img src="img/portfolio/explain-better.png" alt="Pain point 1" style="width: 30%; border-radius: 8px; ">
+        <img src="img/portfolio/different-rules.png" alt="Pain point 2" style="width: 30%; border-radius: 8px; ">
+        <img src="img/portfolio/boring-rules.png" alt="Pain point 3" style="width: 30%; border-radius: 8px; ">
+      </div>
+
+      <h2>Journey Mapping & Workflow Analysis</h2>
+      <p>Using journey maps, I visualized the typical user experience when engaging with rulebooks. This helped pinpoint where users encountered friction, confusion, and drop-off moments — allowing me to define the key problem areas that required design intervention.</p>
+      <img src="img/portfolio/user-flow-board-game.png" alt="User Flow diagram" style="width: 100%; border-radius: 8px; margin-top: 0.5rem;">
+
+      <h2>Quantitative & Qualitative Research</h2>
+      <p>To complement my initial findings, I conducted a survey using Typeform to collect quantitative data from a broader audience. This provided insights into user habits, preferred learning formats, and pain points when engaging with rulebooks, giving me data-driven direction for feature prioritization.</p>      
+
+      <h2>Low-Fidelity Prototyping & IA</h2>
+      <p>Drawing from research insights, I ideated potential solutions that would accommodate different learning styles and reduce cognitive load. Initial low-fidelity wireframes were created using hand drawn sketches and Axure, exploring different ways to structure, condense, and present rule information.</p>
+      <img src="img/portfolio/low-fi.png" alt="Multiple images of Low-Fidelity Prototyping" style="width: 100%; border-radius: 8px; margin-top: 1.5rem;">
+
+      <!-- <h2>High-Fidelity UI Design</h2>
+      <p>The most promising design concepts were developed into high-fidelity, interactive prototypes using Axure. The solution evolved into an application-based database that offered multiple formats for rule consumption — including shortened text summaries, audio narration, and video tutorials — providing users with flexible ways to learn based on their preferences.</p> -->
+
+      <h2>User Validation & Iteration</h2>
+      <p>I conducted usability testing sessions with representative users to gather direct feedback on the prototype. Insights from testing led to several design refinements that improved clarity, usability, and overall engagement with the rule content.</p>
+
+      <h2>Outcome</h2>
+      <p>The final prototype successfully demonstrated a multi-format rule delivery system that simplifies rule learning, accommodates various user learning styles, and transforms a traditionally frustrating experience into an intuitive and approachable one.</p>
+    </div>
+          <a href="index.html" style="display: inline-flex; align-items: center; text-decoration: none; color: #333; font-size: 1.1rem; margin: 2rem 0 0.5rem 0;">
+        <svg width="22" height="22" viewBox="0 0 20 20" fill="none" style="margin-right: 8px;">
+        <path d="M12 16L8 12L12 8" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Back to Home
+    </a>
+  </div>
+</body>
+</html>

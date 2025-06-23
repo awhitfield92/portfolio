@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Internal Tooling Improvement — JSON/YAML Form Template</title>
+  <link rel="icon" href="img/favicon/favicon.ico" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      background: #f8f9fa;
+      color: #222;
+      margin: 0;
+      padding: 0;
+    }
+    .marquee-header-img {
+      width: 100%;
+      max-height: 380px;
+      object-fit: cover;
+      display: block;
+    }
+    .marquee-container {
+      max-width: 800px;
+      margin: -120px auto 0 auto;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      padding: 2.5rem 2rem 3rem 2rem;
+      position: relative;
+      z-index: 2;
+    }
+    .marquee-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .marquee-meta {
+      color: #888;
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+    .marquee-content p {
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+    @media (max-width: 600px) {
+      .marquee-container {
+        padding: 1.2rem 0.7rem 2rem 0.7rem;
+        margin-top: -60px;
+      }
+      .marquee-title {
+        font-size: 1.5rem;
+      }
+      .marquee-header-img {
+        max-height: 180px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <img src="img/portfolio/marquee-laptop-mockup.png" alt="Project Marquee Hero" class="marquee-header-img">
+  <div class="marquee-container">
+    <a href="index.html" style="display: inline-flex; align-items: center; text-decoration: none; color: #333; font-size: 1.1rem; margin: 2rem 0 1.5rem 0;">
+        <svg width="22" height="22" viewBox="0 0 20 20" fill="none" style="margin-right: 8px;">
+        <path d="M12 16L8 12L12 8" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Back to Home
+    </a>
+    <h1 class="marquee-title">Internal Tooling Improvement — JSON/YAML Form Template</h1>
+    <div class="marquee-meta">Leading Financial Institution</div>
+    <div class="marquee-content">
+      <p><strong>Overview:</strong> This project focused on improving internal developer workflows by addressing recurring issues related to the creation and editing of JSON and YAML files — a task that, despite being routine, was prone to frequent errors.</p>
+      
+      <h2>Discovery &amp; Research</h2>
+      <p>Through observation and informal conversations, I identified a surprising pain point among developers: repeated typos, syntax errors, and formatting issues while manually creating or editing JSON and YAML files. While developers were familiar with the formats, the manual process was tedious and error-prone, especially under time pressure.</p>
+      <div style="display: flex; justify-content: space-between; margin-top: 1.5rem;">
+        <img src="img/portfolio/hope-it-works.png" alt="Pain point 1" style="width: 30%; border-radius: 8px; ">
+        <img src="img/portfolio/easy-mistake.png" alt="Pain point 2" style="width: 30%; border-radius: 8px; ">
+        <img src="img/portfolio/wrong-space.png" alt="Pain point 3" style="width: 30%; border-radius: 8px; ">
+      </div>
+
+      <h2>Journey Mapping & Workflow Analysis</h2>
+      <p>I mapped the existing user flows and pinpointed where inefficiencies existed. This clarified where time was being lost and where users were confused or frustrated.</p>
+      
+      <h2>Collaborative Ideation & Design Exploration</h2>
+      <p>To better understand the workflow, I created user journey maps that captured how developers interacted with these files in their day-to-day tasks. I also developed user personas based on different levels of technical confidence and frequency of use.</p>
+      <p>The statement of <span style="font-weight: 600;">How might we modernize the legacy SaaS interface to improve usability without disrupting existing workflows?</span></p>
+
+      <h2>User Research & Journey Mapping</h2>
+      <p>To better understand the workflow, I created user journey maps that captured how developers interacted with these files in their day-to-day tasks. I also developed user personas based on different levels of technical confidence and frequency of use.</p>
+
+      <h2>Identifying Pain Points</h2>
+      <p>By mapping out their processes, I was able to pinpoint where errors were occurring — most commonly during initial file creation and while making manual updates. These issues often led to delays, broken integrations, and unnecessary rework.</p>
+
+      <h2>Solution Design</h2>
+      <p>Based on the identified pain points, I designed a reusable form-based template to standardize JSON and YAML creation. The form guided developers through required fields, reduced the likelihood of typos, and automated consistent formatting.</p>
+
+      <h2>Pilot & Rollout</h2>
+      <p>I trialled the form with a small group of developers on the floor to gather early feedback and ensure it integrated smoothly into their existing workflows. Following a successful pilot, the template was adopted across the wider team.</p>
+
+      <h2>Outcome</h2>
+      <p>The solution significantly reduced formatting errors and improved overall efficiency in creating structured data files. It also increased developer confidence by removing repetitive, error-prone tasks and replacing them with a structured, guided process.</p>
+    </div>
+
+    <a href="index.html" style="display: inline-flex; align-items: center; text-decoration: none; color: #333; font-size: 1.1rem; margin: 2rem 0 0.5rem 0;">
+        <svg width="22" height="22" viewBox="0 0 20 20" fill="none" style="margin-right: 8px;">
+        <path d="M12 16L8 12L12 8" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Back to Home
+    </a>
+  </div>
+</body>
+</html>
