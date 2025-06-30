@@ -44,6 +44,81 @@
       line-height: 1.7;
       margin-bottom: 1.5rem;
     }
+    .sticky-quote {
+      background: #fff59d;
+      padding: 1.2rem;
+      max-width: 300px;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      font-size: 1rem;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.15);
+      margin: 1rem;
+    }
+    .sticky-quote-tilt-up {
+      transform: rotate(-1.5deg);
+    }
+    .sticky-quote-tilt-down {
+      transform: rotate(1.5deg);
+    }
+
+    /* Side-by-side layout */
+    .quote-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Centered sticky note */
+    .quote-center {
+      display: flex;
+      justify-content: center;
+    }
+    .hmw-speech {
+      position: relative;
+      background: #e0f7fa;
+      color: #004d40;
+      font-size: 1.2rem;
+      padding: 1.5rem 2rem;
+      border-radius: 20px;
+      max-width: 500px;
+      margin: 2rem auto;
+      font-weight: 500;
+    }
+
+    /* Tail on the left */
+    .hmw-speech::after {
+      content: "";
+      position: absolute;
+      top: 20px;
+      left: -20px;
+      width: 0;
+      height: 0;
+      border: 10px solid transparent;
+      border-right-color: #e0f7fa;
+    }
+
+    #backToTop {
+      position: fixed;
+      bottom: 40px;
+      right: 40px;
+      z-index: 100;
+      background-color: #333;
+      color: #f8f9fa;
+      border: none;
+      border-radius: 8px;
+      padding: 4px 14px 8px 14px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.6s ease, transform 0.3s ease;
+    }
+
+    #backToTop:hover {
+      background-color: #1f1f1f;
+      transform: scale(1.1);
+    }
+
     @media (max-width: 600px) {
       .marquee-container {
         padding: 1.2rem 0.7rem 2rem 0.7rem;
@@ -76,10 +151,20 @@
       <h2>Discovery &amp; Research</h2>
       <p>The project began with extensive user research to identify friction points and usability issues within the legacy platform. I conducted user interviews, gathered feedback from existing customers, and collaborated with internal support teams to collect recurring pain points and feature requests.</p>
       <p>Key findings revealed that users struggled with the complexity of the interface, found it difficult to navigate, and often felt overwhelmed by the amount of information presented. The legacy design was cluttered, inconsistent, and did not align with modern usability standards.</p>
-      <div style="display: flex; justify-content: space-between; margin-top: 1.5rem;">
-        <img src="img/portfolio/many-menus.png" alt="Pain point 1" style="width: 30%; border-radius: 8px; ">
-        <img src="img/portfolio/clunky-old.png" alt="Pain point 2" style="width: 30%; border-radius: 8px; ">
-        <img src="img/portfolio/complex.png" alt="Pain point 3" style="width: 30%; border-radius: 8px; ">
+      
+      <div class="quote-row">
+        <div class="sticky-quote sticky-quote-tilt-up">
+          “Why are there so many menus”
+        </div>
+        <div class="sticky-quote sticky-quote-tilt-down">
+          “It feels clunky and old”
+        </div>
+      </div>
+
+      <div class="quote-center">
+        <div class="sticky-quote">
+          “It's too complex”
+        </div>
       </div>
 
       <h2>Journey Mapping & Workflow Analysis</h2>
@@ -88,7 +173,10 @@
       
       <h2>Collaborative Ideation & Design Exploration</h2>
       <p>Working closely with stakeholders, product managers, developers, and different user groups, we collaboratively defined project goals and prioritised features. I facilitated design workshops to align on new interaction patterns that would modernize the interface while preserving core functionality for existing users.</p>
-      <p>The statement of <span style="font-weight: 600;">How might we modernize the legacy SaaS interface to improve usability without disrupting existing workflows?</span></p>
+      <p>Through research, I came up with the statement of</p>
+      <div class="hmw-speech">
+        How might we modernize the legacy SaaS interface to improve usability without disrupting existing workflows?
+      </div>
 
       <h2>Low-Fidelity Prototyping & IA</h2>
       <p>I developed wireframes to explore updated layouts, navigation structures, and content hierarchies that better reflected users’ mental models. Particular focus was placed on improving task efficiency, reducing unnecessary complexity, and ensuring consistency across complex workflows.</p>
@@ -109,12 +197,36 @@
       </p>
     </div>
 
-    <a href="index.html" style="display: inline-flex; align-items: center; text-decoration: none; color: #333; font-size: 1.1rem; margin: 2rem 0 0.5rem 0;">
+    <a href="index.html" style="display: inline-flex; align-items: center; text-decoration: none; color: #333; font-size: 1rem; margin: 2rem 0 0.5rem 0;">
         <svg width="22" height="22" viewBox="0 0 20 20" fill="none" style="margin-right: 8px;">
         <path d="M12 16L8 12L12 8" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
         Back to Home
     </a>
   </div>
+
+  <button id="backToTop" title="Back to Top">↑</button>
+
+  <script>
+    const backToTopButton = document.getElementById("backToTop");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        backToTopButton.style.opacity = "1";
+        backToTopButton.style.visibility = "visible";
+      } else {
+        backToTopButton.style.opacity = "0";
+        backToTopButton.style.visibility = "hidden";
+      }
+    });
+
+    backToTopButton.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+  </script>
+
 </body>
 </html>

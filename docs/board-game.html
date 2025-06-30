@@ -44,6 +44,79 @@
       line-height: 1.7;
       margin-bottom: 1.5rem;
     }
+    .sticky-quote {
+      background: #fff59d;
+      padding: 1.2rem;
+      max-width: 300px;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      font-size: 1rem;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.15);
+      margin: 1rem;
+    }
+    .sticky-quote-tilt-up {
+      transform: rotate(-1.5deg);
+    }
+    .sticky-quote-tilt-down {
+      transform: rotate(1.5deg);
+    }
+
+    /* Side-by-side layout */
+    .quote-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Centered sticky note */
+    .quote-center {
+      display: flex;
+      justify-content: center;
+    }
+    .hmw-speech {
+      position: relative;
+      background: #e0f7fa;
+      color: #004d40;
+      font-size: 1.2rem;
+      padding: 1.5rem 2rem;
+      border-radius: 20px;
+      max-width: 500px;
+      margin: 2rem auto;
+      font-weight: 500;
+    }
+
+    /* Tail on the left */
+    .hmw-speech::after {
+      content: "";
+      position: absolute;
+      top: 20px;
+      left: -20px;
+      width: 0;
+      height: 0;
+      border: 10px solid transparent;
+      border-right-color: #e0f7fa;
+    }
+    #backToTop {
+      position: fixed;
+      bottom: 40px;
+      right: 40px;
+      z-index: 100;
+      background-color: #333;
+      color: #f8f9fa;
+      border: none;
+      border-radius: 8px;
+      padding: 4px 14px 8px 14px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.6s ease, transform 0.3s ease;
+    }
+
+    #backToTop:hover {
+      background-color: #1f1f1f;
+      transform: scale(1.1);
+    }
     @media (max-width: 600px) {
       .marquee-container {
         padding: 1.2rem 0.7rem 2rem 0.7rem;
@@ -74,12 +147,25 @@
       
       <h2>Discovery &amp; Research</h2>
       <p>I started by conducting a competitive analysis to examine existing solutions and identify gaps in how rule content is currently presented. To better understand user needs and build empathy, I created personas representing both novice and experienced players, highlighting their unique frustrations, goals, and behaviors related to learning new rules.</p>
-      <p>Through research, I formulated the statement of <span style="font-weight: 600;">How might we manage board games to make them easier to learn?</span></p>
+      <p>Through research, I formulated the statement of</p>
 
-      <div style="display: flex; justify-content: space-between; margin-top: 1.5rem;">
-        <img src="img/portfolio/explain-better.png" alt="Pain point 1" style="width: 30%; border-radius: 8px; ">
-        <img src="img/portfolio/different-rules.png" alt="Pain point 2" style="width: 30%; border-radius: 8px; ">
-        <img src="img/portfolio/boring-rules.png" alt="Pain point 3" style="width: 30%; border-radius: 8px; ">
+      <div class="hmw-speech">
+        How might we manage board games to make them easier to learn?
+      </div>
+
+      <div class="quote-row">
+        <div class="sticky-quote sticky-quote-tilt-up">
+          “Others explain rules better than me”
+        </div>
+        <div class="sticky-quote sticky-quote-tilt-down">
+          “Rules can be interpreted differently”
+        </div>
+      </div>
+
+      <div class="quote-center">
+        <div class="sticky-quote">
+          “Rules are boring to read”
+        </div>
       </div>
 
       <h2>Journey Mapping & Workflow Analysis</h2>
@@ -109,5 +195,29 @@
         Back to Home
     </a>
   </div>
+
+  <button id="backToTop" title="Back to Top">↑</button>
+
+  <script>
+    const backToTopButton = document.getElementById("backToTop");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        backToTopButton.style.opacity = "1";
+        backToTopButton.style.visibility = "visible";
+      } else {
+        backToTopButton.style.opacity = "0";
+        backToTopButton.style.visibility = "hidden";
+      }
+    });
+
+    backToTopButton.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+  </script>
+
 </body>
 </html>

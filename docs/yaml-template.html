@@ -44,6 +44,79 @@
       line-height: 1.7;
       margin-bottom: 1.5rem;
     }
+    .sticky-quote {
+      background: #fff59d;
+      padding: 1.2rem;
+      max-width: 300px;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      font-size: 1rem;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.15);
+      margin: 1rem;
+    }
+    .sticky-quote-tilt-up {
+      transform: rotate(-1.5deg);
+    }
+    .sticky-quote-tilt-down {
+      transform: rotate(1.5deg);
+    }
+
+    /* Side-by-side layout */
+    .quote-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Centered sticky note */
+    .quote-center {
+      display: flex;
+      justify-content: center;
+    }
+    .hmw-speech {
+      position: relative;
+      background: #e0f7fa;
+      color: #004d40;
+      font-size: 1.2rem;
+      padding: 1.5rem 2rem;
+      border-radius: 20px;
+      max-width: 500px;
+      margin: 2rem auto;
+      font-weight: 500;
+    }
+
+    /* Tail on the left */
+    .hmw-speech::after {
+      content: "";
+      position: absolute;
+      top: 20px;
+      left: -20px;
+      width: 0;
+      height: 0;
+      border: 10px solid transparent;
+      border-right-color: #e0f7fa;
+    }
+    #backToTop {
+      position: fixed;
+      bottom: 40px;
+      right: 40px;
+      z-index: 100;
+      background-color: #333;
+      color: #f8f9fa;
+      border: none;
+      border-radius: 8px;
+      padding: 4px 14px 8px 14px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.6s ease, transform 0.3s ease;
+    }
+
+    #backToTop:hover {
+      background-color: #1f1f1f;
+      transform: scale(1.1);
+    }
     @media (max-width: 600px) {
       .marquee-container {
         padding: 1.2rem 0.7rem 2rem 0.7rem;
@@ -74,21 +147,35 @@
       
       <h2>Discovery &amp; Research</h2>
       <p>Through observation and informal conversations, I identified a surprising pain point among developers: repeated typos, syntax errors, and formatting issues while manually creating or editing JSON and YAML files. While developers were familiar with the formats, the manual process was tedious and error-prone, especially under time pressure.</p>
-      <div style="display: flex; justify-content: space-between; margin-top: 1.5rem;">
-        <img src="img/portfolio/hope-it-works.png" alt="Pain point 1" style="width: 30%; border-radius: 8px; ">
-        <img src="img/portfolio/easy-mistake.png" alt="Pain point 2" style="width: 30%; border-radius: 8px; ">
-        <img src="img/portfolio/wrong-space.png" alt="Pain point 3" style="width: 30%; border-radius: 8px; ">
+      
+      <div class="quote-row">
+        <div class="sticky-quote sticky-quote-tilt-up">
+          “I copy from old files and just hope it works after editing”
+        </div>
+        <div class="sticky-quote sticky-quote-tilt-down">
+          “It's too easy to make mistakes and hard to know where”
+        </div>
+      </div>
+
+      <div class="quote-center">
+        <div class="sticky-quote">
+          “One wrong space and the whole thing breaks”
+        </div>
       </div>
 
       <h2>Journey Mapping & Workflow Analysis</h2>
-      <p>I mapped the existing user flows and pinpointed where inefficiencies existed. This clarified where time was being lost and where users were confused or frustrated.</p>
+      <p>I mapped the existing user flows and pinpointed where inefficiencies existed. This clarified where time was being lost and where users were making mistakes.</p>
       
-      <h2>Collaborative Ideation & Design Exploration</h2>
+      <!-- <h2>Collaborative Ideation & Design Exploration</h2>
       <p>To better understand the workflow, I created user journey maps that captured how developers interacted with these files in their day-to-day tasks. I also developed user personas based on different levels of technical confidence and frequency of use.</p>
-      <p>The statement of <span style="font-weight: 600;">How might we modernize the legacy SaaS interface to improve usability without disrupting existing workflows?</span></p>
+      <p>The statement of </p> -->
 
       <h2>User Research & Journey Mapping</h2>
       <p>To better understand the workflow, I created user journey maps that captured how developers interacted with these files in their day-to-day tasks. I also developed user personas based on different levels of technical confidence and frequency of use.</p>
+      <p>From these insights, I crafted a guiding question to steer our design efforts.</p>
+      <div class="hmw-speech">
+        How might we improve the process of creating and editing JSON/YAML files to minimize errors?
+      </div>
 
       <h2>Identifying Pain Points</h2>
       <p>By mapping out their processes, I was able to pinpoint where errors were occurring — most commonly during initial file creation and while making manual updates. These issues often led to delays, broken integrations, and unnecessary rework.</p>
@@ -110,5 +197,28 @@
         Back to Home
     </a>
   </div>
+
+  <button id="backToTop" title="Back to Top">↑</button>
+
+  <script>
+    const backToTopButton = document.getElementById("backToTop");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        backToTopButton.style.opacity = "1";
+        backToTopButton.style.visibility = "visible";
+      } else {
+        backToTopButton.style.opacity = "0";
+        backToTopButton.style.visibility = "hidden";
+      }
+    });
+
+    backToTopButton.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+  </script>
 </body>
 </html>
