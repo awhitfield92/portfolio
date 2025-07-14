@@ -7,161 +7,7 @@
   <meta name="description" content="Amy Whitfield – UX Designer Portfolio">
   <link rel="icon" href="img/favicon/favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif;
-    }
-    body {
-      background: #f8f9fa; color: #333;
-    }
-    header {
-      background: #fff; padding: 2rem 1rem; border-bottom: 1px solid #eee;
-      display: flex; justify-content: space-between; align-items: center;
-    }
-    header h1 {
-      font-weight: 600;
-    }
-    nav a {
-      margin-left: 2rem; color: #555; text-decoration: none;
-    }
-    main {
-      max-width: 1000px; margin: 2rem auto; padding: 0 1rem;
-    }
-    section {
-      margin-bottom: 4rem;
-    }
-    .intro {
-      background: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    }
-    .intro p {
-      line-height: 1.6;
-    }
-    .case-studies {
-      display: grid; gap: 2rem;
-    }
-    .card {
-        display: flex;
-        flex-direction: row;
-        align-items: stretch;
-        background: white;
-        border-radius: 8px;
-        overflow: hidden;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        transition: transform 0.2s;
-        min-height: 220px;
-        cursor: pointer;
-        text-decoration: none;
-        color: inherit;
-    }
-    .card:hover {
-      transform: translateY(-4px);
-    }
-    .card img {
-      width: 100%; height: auto;
-    }
-    .card-content {
-        flex: 1 1 135%;
-        padding: 1.5rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-    .card-img-right {
-        flex: 1 1 50%;
-        width: 50%;
-        object-fit: cover;
-        border-radius: 0 8px 8px 0;
-        height: 100%;
-        display: block;
-    }
-    .card-content h3 {
-      margin-bottom: 0.5rem;
-    }
-    .card-content p {
-      font-size: 0.95rem; line-height: 1.5;
-    }
-    .case-study-thumbnail {
-      max-height: 16rem;
-    }
-    .visuals-na {
-      text-align: center;
-      margin-top: 50px;
-    }
-    .modal {
-      position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7);
-      display: none; justify-content: center; align-items: center;
-    }
-    .modal-content {
-      background: #fff; padding: 2rem; border-radius: 8px; max-width: 800px; width: 90%; max-height: 90%; overflow-y: auto;
-    }
-    .modal-close {
-      text-align: right; margin-bottom: 1rem;
-    }
-    .modal-close button {
-      background: none; border: none; font-size: 1.2rem; cursor: pointer;
-    }
-    footer {
-      text-align: center; padding: 2rem 1rem; color: #777;
-    }
-    /* Mobile responsiveness */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  nav {
-    margin-top: 1rem;
-    width: 100%;
-  }
-
-  nav a {
-    display: inline-block;
-    margin: 0 1rem 0.5rem 0;
-  }
-
-  .card {
-    flex-direction: column;
-    min-height: auto;
-  }
-
-  .card-img-right {
-    width: 100%;
-    height: auto;
-    border-radius: 0 0 8px 8px;
-  }
-
-  .case-study-thumbnail {
-    width: 100% !important;
-  }
-
-  .card-content {
-    padding: 1rem;
-  }
-
-  .intro, .modal-content {
-    padding: 1.5rem;
-  }
-
-  h2 {
-    font-size: 1.5rem;
-  }
-
-  .card-content h3 {
-    font-size: 1.2rem;
-  }
-
-  .card-content p {
-    font-size: 0.95rem;
-  }
-  .visuals-na {
-    text-align: center;
-    padding-top: 30px;
-    min-height: 130px;
-  }
-}
-
-  </style>
+  <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
   <header>
@@ -188,7 +34,7 @@
             <h3>Project Marquee</h3>
             <p>Redesigning a legacy SaaS platform to improve usability, reduce friction, and modernize its UI while aligning with user expectations.</p>
           </div>
-          <div class="case-study-thumbnail" class="card-img-right">
+          <div class="case-study-thumbnail">
             <img src="img/portfolio/marquee-latest-assets.png" alt="Project Marquee Thumbnail" class="card-img-right">
           </div>
         </a>
@@ -198,7 +44,7 @@
             <h3>Project Board Game</h3>
             <p>A self-initiated UX case study to improve how rulebooks are consumed in digital format through audio, text, and video, with flexible learning formats and an intuitive design.</p>
           </div>
-          <div class="case-study-thumbnail" class="card-img-right">
+          <div class="case-study-thumbnail">
             <img src="img/portfolio/board-game-app.png" alt="Board Game App Thumbnail" class="card-img-right">
           </div>
         </a>
@@ -208,7 +54,7 @@
             <h3>Internal Tooling (JSON/YAML Template)</h3>
             <p>Created a form-based UX improvement for developers editing structured data files. Reduced error rate and improved efficiency by simplifying the process and guiding input.</p>
           </div>
-          <div class="case-study-thumbnail" class="card-img-right" style="background-color: #eee; width: 198%">
+          <div class="case-study-thumbnail" style="background-color: #eee; width: 198%">
             <div class="visuals-na" style="">
                 <!-- <h4>Internal tool design</h4> -->
                 <h4>Visuals not available</h4>
