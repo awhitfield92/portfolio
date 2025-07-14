@@ -7,6 +7,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="css/style.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" />
+
 </head>
 <body>
   <img src="img/portfolio/board-game-app.png" alt="Project Board Game Hero" class="marquee-header-img">
@@ -47,14 +50,33 @@
 
       <h2>Journey Mapping & Workflow Analysis</h2>
       <p>Using journey maps, I visualized the typical user experience when engaging with rulebooks. This helped pinpoint where users encountered friction, confusion, and drop-off moments — allowing me to define the key problem areas that required design intervention.</p>
-      <img src="img/portfolio/user-flow-board-game.png" alt="User Flow diagram" style="width: 100%; border-radius: 8px; margin-top: 0.5rem;">
+      <!-- <img src="img/portfolio/user-flow-board-game.png" alt="User Flow diagram" style="width: 100%; border-radius: 8px; margin-top: 0.5rem;"> -->
+      <div class="fancybox-gallery" style="margin-top: 1rem;">
+          <a href="img/portfolio/user-flow-board-game.png" data-fancybox="userflow-gallery" data-caption="User Flow diagram">
+            <img src="img/portfolio/user-flow-board-game.png" alt="User Flow diagram" style="width: 100%; border-radius: 8px;" />
+            <span class="material-icons-overlay">search</span>
+          </a>
+      </div>
+      <p style="text-align: center; font-size: 0.9rem; color: #666; margin-top: 0.2rem;">Click image to enlarge</p>
 
       <h2>Quantitative & Qualitative Research</h2>
       <p>To complement my initial findings, I conducted a survey using Typeform to collect quantitative data from a broader audience. This provided insights into user habits, preferred learning formats, and pain points when engaging with rulebooks, giving me data-driven direction for feature prioritization.</p>      
 
       <h2>Low-Fidelity Prototyping & IA</h2>
-      <p>Drawing from research insights, I ideated potential solutions that would accommodate different learning styles and reduce cognitive load. Initial low-fidelity wireframes were created using hand drawn sketches and Axure, exploring different ways to structure, condense, and present rule information.</p>
-      <img src="img/portfolio/low-fi.png" alt="Multiple images of Low-Fidelity Prototyping" style="width: 100%; border-radius: 8px; margin-top: 1.5rem;">
+      <p>Drawing from research insights, I sketched potential solutions that would accommodate different learning styles and reduce cognitive load. Initial low-fidelity wireframes were created using hand drawn sketches and Axure, exploring different ways to structure, condense, and present rule information.</p>
+      <!-- <img src="img/portfolio/low-fi.png" alt="Multiple images of Low-Fidelity Prototyping" style="width: 100%; border-radius: 8px; margin-top: 1.5rem;"> -->
+      <div class="fancybox-gallery" style="margin-top: 1rem;">
+        <a href="img/portfolio/low-fi.png" data-fancybox="low-fi-gallery" data-caption="Marquee overview – high-fidelity UI">
+          <img src="img/portfolio/low-fi.png" alt="Multiple images of Marquee UI" style="width: 100%; border-radius: 8px;" />
+          <span class="material-icons-overlay">search</span>
+        </a>
+        <a href="img/portfolio/board-game-01.png" data-fancybox="low-fi-gallery" data-caption="Search list"></a>
+        <a href="img/portfolio/board-game-02.png" data-fancybox="low-fi-gallery" data-caption="How to play videos"></a>
+        <a href="img/portfolio/boardgame-03.png" data-fancybox="low-fi-gallery" data-caption="About board game"></a>
+        <a href="img/portfolio/wireframe-sketches-01.png" data-fancybox="low-fi-gallery" data-caption="Annoted search list"></a>
+        <a href="img/portfolio/wireframe-sketches-07.png" data-fancybox="low-fi-gallery" data-caption="Annotaed about board game"></a>
+      </div>
+      <p style="text-align: center; font-size: 0.9rem; color: #666; margin-top: 0.2rem;">Click image to open gallery</p>
 
       <!-- <h2>High-Fidelity UI Design</h2>
       <p>The most promising design concepts were developed into high-fidelity, interactive prototypes using Axure. The solution evolved into an application-based database that offered multiple formats for rule consumption — including shortened text summaries, audio narration, and video tutorials — providing users with flexible ways to learn based on their preferences.</p> -->
@@ -94,6 +116,12 @@
         behavior: "smooth"
       });
     });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+  <script>
+      Fancybox.bind("[data-fancybox]", {
+        // Optional config
+      });
   </script>
 
 </body>
