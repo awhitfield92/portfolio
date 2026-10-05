@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>Internal Sample Management Mobile Application (WIP) - Case Study</title>
+    <title>Automated Production & Resizing Plugin for Adobe InDesign (MVP) - Case Study</title>
     <link rel="icon" href="img/favicon/favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +12,7 @@
 
   </head>
   <body>
-    <img src="img/portfolio/groundcrew_home.png" alt="Groundcrew Hero" class="marquee-header-img">
+    <img src="img/portfolio/indesign-plugin.png" alt="Groundcrew Hero" class="marquee-header-img">
     <div class="marquee-container">
       <a href="index.html" style="display: inline-flex; align-items: center; text-decoration: none; color: #333; font-size: 1.1rem; margin: 2rem 0 1.5rem 0;">
           <svg width="22" height="22" viewBox="0 0 20 20" fill="none" style="margin-right: 8px;">
@@ -20,37 +20,36 @@
           </svg>
           Back to Home
       </a>
-      <h1 class="marquee-title">Internal Sample Management Mobile Application (WIP)</h1>
+      <h1 class="marquee-title">Automated Production & Resizing Plugin for Adobe InDesign (MVP)</h1>
       <div class="marquee-meta">Wellcom Internal Project</div>
       <div class="marquee-content">
         <p>
           <strong>Role:</strong> UX/UI Designer (end-to-end), Developer (front-end)<br>
-          <strong>Tech Stack:</strong> Figma, React Native, AI-assisted research synthesis, SQLite, standard React Hooks/Context
+          <strong>Tech Stack:</strong> Adobe UXP, React, InDesign DOM API, Adobe UXP, HTML, CSS, AI-assisted research synthesis
         </p>
         <!-- <p>
           <strong>Overview:</strong> I designed a mobile application that enables our in-house team to quickly scan product swing tags. The app captures a photo of the swing tag, extracts the barcode number via image-to-text recognition and allows users to complete a digital form. This data is then seamlessly transferred into a connected web application.
         </p> -->
 
-        <h2>The Problem & Constraints</h2>
-        <p>Warehouse staff were operating with a legacy application that lacked offline capabilities in an environment with notoriously spotty Wi-Fi. This unreliability severely eroded user trust, forcing staff into a manual, dual-entry workaround, cross-referencing scanned items against an external spreadsheet to ensure successful capture. Furthermore, the legacy system provided no immediate feedback for missed items, meaning tracking failures were only discovered reactively.</p>
+        <h2>The Problem: Manual Production Bottlenecks</h2>
+        <p>The production design team was bogged down by highly repetitive layout tasks. For localized campaigns (e.g., regional collateral with unique location names and images), designers had to manually duplicate master files, resize them into various aspect ratios, and meticulously copy-paste localized assets into every variation. This manual workflow was time-consuming and highly susceptible to human error.</p>
 
-        <h2>The Solution & Operational Flow</h2>
-        <p>The application is an offline-first solution built around a highly concentrated, two-screen architecture that handles core receiving workflows without dependency on a continuous network connection.</p>
-        <p>Intake & OCR Processing: Users unpack deliveries and process items using a standard Android smartphone camera. Images of swing tags or alternative proof-of-receipt (like garment labels) are captured and processed through an OCR/Textract backend to extract product data.</p>
-        <p>Offline-First Reliability: By leveraging SQLite and standard React Context for state management, the app guarantees local data capture even in Wi-Fi dead zones. This instant, reliable feedback resolves the trust issue and eliminates the need for manual spreadsheet verification.</p>
+        <h2>The Solution: Human-in-the-Loop Automation</h2>
+        <p>Data Ingestion: Users drag and drop an Excel spreadsheet directly into the plugin’s UI. This sheet contains the localized copy, target dimensions, and local file paths for region-specific images.</p>
+        <p>Manual Setup & Tagging: Designers prepare their master layouts (e.g., one landscape, one portrait) by manually tagging text and image frames using InDesign’s native Layers panel.</p>
+        <p>Batch Generation: The plugin parses the spreadsheet, maps the data to the tagged layers, programmatically pulls the correct images from the local folder structure, and generates the variations within the document or as individual files.</p>
 
 
-        <h2>Design System & Technical Implementation</h2>
-        <p>To ensure the interface was highly legible in a fast-paced, industrial setting, I established a foundational design token architecture in Figma utilizing both primitive and semantic variables. The brand's color palette was systematically adapted to prioritize high contrast and clear readability. Moving into development, I avoided heavy third-party UI libraries, opting instead to build out a lightweight library of custom React Native components mapped directly to the Figma variables.</p>
+        <h2>Technical Implementation: Algorithmic Layout & Reflow</h2>
+        <p>A significant technical challenge was ensuring structural integrity when generating drastically different dimensions. Relying solely on InDesign’s native Auto Layout was insufficient. I engineered custom mathematical logic within the plugin to dynamically calculate X/Y coordinates and scaling properties. This logic ensured text boxes wouldn't clip when copy length changed, and forced surrounding elements and images to intelligently reflow and maintain relative margins based on the new boundaries.</p>
         <!-- <img src="img/portfolio/groundcrew-user-research.png" alt="Groundcrew user research showing user journey and persona" style="width: 100%; border-radius: 8px; margin-top: 1rem;"> -->
 
-        <h2>Prototyping Complex Asynchronous Workflows</h2>
-        <p>A major UX challenge was handling the backend OCR/Textract processing time without bottlenecking the warehouse staff. Instead of designing a synchronous flow that forces users to wait for instant validation after every scan, I architected an asynchronous, batch-scanning workflow.</p>
-        <p>By utilizing standard React Hooks and Context, I built a background queueing system. Users can continuously scan items in a rapid, unblocked loop. Meanwhile, a dedicated queue screen manages the data behind the scenes, visually organizing the batch into clear states: In Progress, Uploaded, and Failed. This logic was validated early through high-fidelity coded prototypes using local mock APIs to simulate the OCR delay and test the state management before final production.</p>
+        <h2>Technical Constraints & Future Roadmap</h2>
+        <p>As an MVP, the goal was to validate the workflow and reduce immediate manual effort while intentionally scoping out complex integrations.</p>
+        <p>Data & Security: Direct Google Sheets integration was deferred to ensure proper OAuth authentication and security protocols could be established later; the local Excel workflow served as a secure workaround.</p>
+        <p>State Management: Without an integrated database to persist settings, layer mapping and configuration memory are currently limited per session.</p>
+        <p>Next Steps: Phase 2 includes building a dedicated UI within the React panel to replace manual layer tagging, implementing persistent database storage for user preferences, and finalizing the Google Sheets API integration.</p>
         <!-- <img src="img/portfolio/design-system-research.png" alt="Groundcrew design process showing wireframes, prototypes and design style" style="width: 100%; border-radius: 8px;"> -->
-
-        <h2>Current Status & Next StepsFinal Solution</h2>
-        <p>The application is currently in active development. The immediate next phase is focused on resilient error handling, specifically, designing how failed OCR scans are surfaced back to the user. Because the scanning flow is asynchronous, the current challenge lies in creating an intuitive UI that alerts the user to an errant scan in the queue without aggressively interrupting their ongoing scanning momentum, ultimately bridging the gap between technical error states and a seamless operational experience.</p>
         <!-- <div class="fancybox-gallery" style="margin-top: 1rem;">
           <a href="img/portfolio/groundcrew-final.png" data-fancybox="groundcrew-gallery" data-caption="Groundcrew overview – high-fidelity UI">
             <img src="img/portfolio/groundcrew-final.png" alt="Multiple images of Groundcrew UI" style="width: 100%; border-radius: 8px;" />
@@ -65,9 +64,6 @@
           <a href="img/portfolio/gc-sew-in-more.png" data-fancybox="groundcrew-gallery" data-caption="Extra More Sew-In Label Capture Screen"></a>
         </div> -->
         <!-- <p style="text-align: center; font-size: 0.9rem; color: #666; margin-top: 0.2rem;">Click image to open gallery</p> -->
-
-        <h2>Results & Impact</h2>
-        <p>By solving the challenge of inefficient data entry, the app reduced manual errors, improved completion of required fields and sped up the workflow for team members. Users reported that the process felt faster and more intuitive and the app quickly became the standard method for capturing product swing tag information. This project reinforced the importance of designing solutions that directly address user pain points, validating designs through usability testing and creating a consistent design system for scalable and reliable UI.</p>
       </div>
 
       <a href="index.html" style="display: inline-flex; align-items: center; text-decoration: none; color: #333; font-size: 1rem; margin: 2rem 0 0.5rem 0;">
