@@ -12,7 +12,7 @@
 
   </head>
   <body>
-    <img src="img/portfolio/groundcrew_home.png" alt="Groundcrew Hero" class="marquee-header-img">
+    <img src="img/portfolio/groundcrew-01.jpeg" alt="Groundcrew Hero" class="marquee-header-img">
     <div class="marquee-container">
       <a href="index.html" style="display: inline-flex; align-items: center; text-decoration: none; color: #333; font-size: 1.1rem; margin: 2rem 0 1.5rem 0;">
           <svg width="22" height="22" viewBox="0 0 20 20" fill="none" style="margin-right: 8px;">
@@ -27,9 +27,6 @@
           <strong>Role:</strong> UX/UI Designer (end-to-end), Developer (front-end)<br>
           <strong>Tech Stack:</strong> Figma, React Native, AI-assisted research synthesis, SQLite, standard React Hooks/Context
         </p>
-        <!-- <p>
-          <strong>Overview:</strong> I designed a mobile application that enables our in-house team to quickly scan product swing tags. The app captures a photo of the swing tag, extracts the barcode number via image-to-text recognition and allows users to complete a digital form. This data is then seamlessly transferred into a connected web application.
-        </p> -->
 
         <h2>The Problem & Constraints</h2>
         <p>Warehouse staff were operating with a legacy application that lacked offline capabilities in an environment with notoriously spotty Wi-Fi. This unreliability severely eroded user trust, forcing staff into a manual, dual-entry workaround, cross-referencing scanned items against an external spreadsheet to ensure successful capture. Furthermore, the legacy system provided no immediate feedback for missed items, meaning tracking failures were only discovered reactively.</p>
@@ -42,12 +39,13 @@
 
         <h2>Design System & Technical Implementation</h2>
         <p>To ensure the interface was highly legible in a fast-paced, industrial setting, I established a foundational design token architecture in Figma utilizing both primitive and semantic variables. The brand's color palette was systematically adapted to prioritize high contrast and clear readability. Moving into development, I avoided heavy third-party UI libraries, opting instead to build out a lightweight library of custom React Native components mapped directly to the Figma variables.</p>
-        <!-- <img src="img/portfolio/groundcrew-user-research.png" alt="Groundcrew user research showing user journey and persona" style="width: 100%; border-radius: 8px; margin-top: 1rem;"> -->
+        <img src="img/portfolio/Style-Guide.png" alt="style guide" style="width: 100%; border-radius: 8px; margin-top: 1rem;">
 
         <h2>Prototyping Complex Asynchronous Workflows</h2>
         <p>A major UX challenge was handling the backend OCR/Textract processing time without bottlenecking the warehouse staff. Instead of designing a synchronous flow that forces users to wait for instant validation after every scan, I architected an asynchronous, batch-scanning workflow.</p>
         <p>By utilizing standard React Hooks and Context, I built a background queueing system. Users can continuously scan items in a rapid, unblocked loop. Meanwhile, a dedicated queue screen manages the data behind the scenes, visually organizing the batch into clear states: In Progress, Uploaded, and Failed. This logic was validated early through high-fidelity coded prototypes using local mock APIs to simulate the OCR delay and test the state management before final production.</p>
         <!-- <img src="img/portfolio/design-system-research.png" alt="Groundcrew design process showing wireframes, prototypes and design style" style="width: 100%; border-radius: 8px;"> -->
+        <img src="img/portfolio/groundcrew-02.png" alt="Groundcrew design process showing wireframes, prototypes and design style" style="width: 100%; border-radius: 8px;">
 
         <h2>Current Status & Next StepsFinal Solution</h2>
         <p>The application is currently in active development. The immediate next phase is focused on resilient error handling, specifically, designing how failed OCR scans are surfaced back to the user. Because the scanning flow is asynchronous, the current challenge lies in creating an intuitive UI that alerts the user to an errant scan in the queue without aggressively interrupting their ongoing scanning momentum, ultimately bridging the gap between technical error states and a seamless operational experience.</p>
