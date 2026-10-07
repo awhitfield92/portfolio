@@ -9,10 +9,9 @@
     <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
   </head>
   <body>
-    <img src="img/portfolio/indesign-plugin.png" alt="Groundcrew Hero" class="marquee-header-img">
+    <img src="img/portfolio/indesign-plugin.png" alt="InDesign Plugin Hero Cover" class="marquee-header-img">
     <div class="marquee-container">
       <a href="index.html" style="display: inline-flex; align-items: center; text-decoration: none; color: #333; font-size: 1.1rem; margin: 2rem 0 1.5rem 0;">
           <svg width="22" height="22" viewBox="0 0 20 20" fill="none" style="margin-right: 8px;">
@@ -20,50 +19,52 @@
           </svg>
           Back to Home
       </a>
-      <h1 class="marquee-title">Automated Production & Resizing Plugin for Adobe InDesign (MVP)</h1>
+      <h1 class="marquee-title">Automated Production and Resizing Plugin for Adobe InDesign (MVP)</h1>
       <div class="marquee-meta">Wellcom Internal Project</div>
       <div class="marquee-content">
         <p>
           <strong>Role:</strong> UX/UI Designer (end-to-end), Developer (front-end)<br>
-          <strong>Tech Stack:</strong> Adobe UXP, React, InDesign DOM API, Adobe UXP, HTML, CSS, AI-assisted research synthesis
+          <strong>Tech Stack:</strong> Adobe UXP, React, InDesign DOM API, HTML, CSS, AI-assisted research synthesis
         </p>
-        <!-- <p>
-          <strong>Overview:</strong> I designed a mobile application that enables our in-house team to quickly scan product swing tags. The app captures a photo of the swing tag, extracts the barcode number via image-to-text recognition and allows users to complete a digital form. This data is then seamlessly transferred into a connected web application.
-        </p> -->
+
+        <a href="img/portfolio/id_master.png" data-fancybox="gallery" style="flex: 1;">
+          <img src="img/portfolio/id_master.png" alt="Overview of the InDesign automated production plugin interface" style="width: 100%; border-radius: 8px; margin-top: 1rem; margin-bottom: 1.5rem;">
+        </a>
 
         <h2>The Problem: Manual Production Bottlenecks</h2>
-        <p>The production design team was bogged down by highly repetitive layout tasks. For localized campaigns (e.g., regional collateral with unique location names and images), designers had to manually duplicate master files, resize them into various aspect ratios, and meticulously copy-paste localized assets into every variation. This manual workflow was time-consuming and highly susceptible to human error.</p>
+        <p>The production design team was bogged down by highly repetitive layout tasks. For localized campaigns (e.g., regional collateral with unique location names and images), designers had to manually duplicate master files, resize them into various aspect ratios and meticulously copy-paste localized assets into every variation. This manual workflow was time-consuming and highly susceptible to human error.</p>
 
         <h2>The Solution: Human-in-the-Loop Automation</h2>
-        <p>Data Ingestion: Users drag and drop an Excel spreadsheet directly into the plugin’s UI. This sheet contains the localized copy, target dimensions, and local file paths for region-specific images.</p>
-        <p>Manual Setup & Tagging: Designers prepare their master layouts (e.g., one landscape, one portrait) by manually tagging text and image frames using InDesign’s native Layers panel.</p>
-        <p>Batch Generation: The plugin parses the spreadsheet, maps the data to the tagged layers, programmatically pulls the correct images from the local folder structure, and generates the variations within the document or as individual files.</p>
+        <p>Data Ingestion: Users drag and drop an Excel spreadsheet directly into the plugin’s UI. This sheet contains the localized copy, relevant data (e.g. heading, subheading, logo, etc), target dimensions and local file paths for images.</p>
+        <p>Manual Setup & Tagging: Designers prepare their master layouts (e.g. one landscape, one portrait) by manually tagging text and image frames using InDesign’s native layers panel.</p>
+        <p>Batch Generation: The plugin parses the spreadsheet, maps the data to the tagged layers, programmatically pulls the correct images from the local folder structure and generates the variations within the document or as individual files.</p>
+        
+        <div style="display: flex; gap: 16px; margin-top: 1rem; margin-bottom: 1.5rem;">
+          <a href="img/portfolio/id_datasheet.png" data-fancybox="gallery" style="flex: 1;">
+            <img src="img/portfolio/id_datasheet.png" alt="Plugin interface displaying dragged-and-dropped spreadsheet data ingestion" style="width: 100%; border-radius: 8px; display: block;">
+          </a>
+          <a href="img/portfolio/id_tagging.png" data-fancybox="gallery" style="flex: 1;">
+            <img src="img/portfolio/id_tagging.png" alt="InDesign native layers panel showing manual setup and layer tagging" style="width: 100%; border-radius: 8px; display: block;">
+          </a>
+        </div>
 
-
-        <h2>Technical Implementation: Algorithmic Layout & Reflow</h2>
+        <h2>Technical Implementation: Algorithmic Layout and Reflow</h2>
         <p>A significant technical challenge was ensuring structural integrity when generating drastically different dimensions. Relying solely on InDesign’s native Auto Layout was insufficient. I engineered custom mathematical logic within the plugin to dynamically calculate X/Y coordinates and scaling properties. This logic ensured text boxes wouldn't clip when copy length changed, and forced surrounding elements and images to intelligently reflow and maintain relative margins based on the new boundaries.</p>
-        <!-- <img src="img/portfolio/groundcrew-user-research.png" alt="Groundcrew user research showing user journey and persona" style="width: 100%; border-radius: 8px; margin-top: 1rem;"> -->
+        
+        <div style="display: flex; gap: 16px; margin-top: 1rem; margin-bottom: 1.5rem;">
+          <a href="img/portfolio/id_adapt_01.png" data-fancybox="gallery" style="flex: 1;">
+            <img src="img/portfolio/id_adapt_01.png" alt="InDesign document before algorithmic layout and scaling adjustment" style="width: 50%; border-radius: 8px;">
+          </a>
+          <a href="img/portfolio/id_adapt_03.png" data-fancybox="gallery" style="flex: 1;">
+            <img src="img/portfolio/id_adapt_03.png" alt="InDesign document after dynamic reflow calculating new dimensions and aspect ratios" style="width: 50%; border-radius: 8px;">
+          </a>
+        </div>
 
-        <h2>Technical Constraints & Future Roadmap</h2>
+        <h2>Technical Constraints and Future Roadmap</h2>
         <p>As an MVP, the goal was to validate the workflow and reduce immediate manual effort while intentionally scoping out complex integrations.</p>
         <p>Data & Security: Direct Google Sheets integration was deferred to ensure proper OAuth authentication and security protocols could be established later; the local Excel workflow served as a secure workaround.</p>
         <p>State Management: Without an integrated database to persist settings, layer mapping and configuration memory are currently limited per session.</p>
         <p>Next Steps: Phase 2 includes building a dedicated UI within the React panel to replace manual layer tagging, implementing persistent database storage for user preferences, and finalizing the Google Sheets API integration.</p>
-        <!-- <img src="img/portfolio/design-system-research.png" alt="Groundcrew design process showing wireframes, prototypes and design style" style="width: 100%; border-radius: 8px;"> -->
-        <!-- <div class="fancybox-gallery" style="margin-top: 1rem;">
-          <a href="img/portfolio/groundcrew-final.png" data-fancybox="groundcrew-gallery" data-caption="Groundcrew overview – high-fidelity UI">
-            <img src="img/portfolio/groundcrew-final.png" alt="Multiple images of Groundcrew UI" style="width: 100%; border-radius: 8px;" />
-            <span class="material-icons-overlay">search</span>
-          </a>
-          <a href="img/portfolio/gc-initial.png" data-fancybox="groundcrew-gallery" data-caption="Initial Screen"></a>
-          <a href="img/portfolio/gc-in-capture.png" data-fancybox="groundcrew-gallery" data-caption="Incoming Capture Screen"></a>
-          <a href="img/portfolio/gc-in-capture-confirm.png" data-fancybox="groundcrew-gallery" data-caption="Incoming Capture Confirm Screen"></a>
-          <a href="img/portfolio/gc-sew-in-confirm.png" data-fancybox="groundcrew-gallery" data-caption="Extra Add Sew-In Label Screen"></a>
-          <a href="img/portfolio/gc-sew-in.png" data-fancybox="groundcrew-gallery" data-caption="Extra Sew-In Label Capture Screen"></a>
-          <a href="img/portfolio/gc-sew-in-confirm-w-image.png" data-fancybox="groundcrew-gallery" data-caption="Extra Image Sew-In Label Capture Screen"></a>
-          <a href="img/portfolio/gc-sew-in-more.png" data-fancybox="groundcrew-gallery" data-caption="Extra More Sew-In Label Capture Screen"></a>
-        </div> -->
-        <!-- <p style="text-align: center; font-size: 0.9rem; color: #666; margin-top: 0.2rem;">Click image to open gallery</p> -->
       </div>
 
       <a href="index.html" style="display: inline-flex; align-items: center; text-decoration: none; color: #333; font-size: 1rem; margin: 2rem 0 0.5rem 0;">
@@ -103,8 +104,5 @@
         // Optional config
       });
     </script>
-
-
   </body>
-
 </html>
